@@ -1,5 +1,134 @@
 # fabrica
 
-A modern Python project template, the forge for curriculorum projects and beyond.
+> *Fabrica Curriculorum* — the forge of curricula.
 
-*Work in progress. Scaffold in Apr 2026.*
+[![CI](https://github.com/elukemarshall/fabrica/actions/workflows/ci.yml/badge.svg)](https://github.com/elukemarshall/fabrica/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+
+A modern Python project template — a clean, opinionated scaffold for new
+projects with quality gates already wired in. Clone it, rename it, write code.
+
+## Why
+
+Starting a Python project well takes hours: pin a Python version, write
+`pyproject.toml`, configure a linter, configure a type checker, configure
+tests, set up CI, write a license, gitignore a hundred files. Most of that
+work is identical on every project. Doing it from scratch each time wastes
+hours and produces drift between projects.
+
+`fabrica` is the canonical answer for new Python projects in this portfolio.
+Every meaningful new project descends from it. Improvements to the template
+flow forward into future projects; lessons from individual projects flow
+back into the template.
+
+The bar is **production-quality from day one**:
+
+- Strict type checking (`pyright` strict mode).
+- Comprehensive linting + formatting (`ruff` with a curated rule set).
+- Tests via `pytest` with coverage tracking.
+- Pre-commit hooks enforcing all of the above locally.
+- GitHub Actions running all of the above on every push and PR.
+- MIT licensed, public-by-default.
+
+## Quickstart
+
+### Via GitHub UI
+
+Click the green **Use this template** button at the top of this repo, name
+your new project, and clone it. (If you don't see that button yet, the
+template flag isn't enabled — see the note at the bottom of this README.)
+
+### Via `gh` CLI
+
+```bash
+gh repo create my-new-project --template elukemarshall/fabrica --public --clone
+cd my-new-project
+```
+
+### Then customize
+
+1. Rename the package directory: `mv src/fabrica src/my_new_project`.
+2. Update `pyproject.toml`: `name`, `description`, `[project.urls]`, and
+   `[tool.hatch.build.targets.wheel] packages` to point at the new path.
+3. Replace this README's content with your project's.
+4. `uv sync` to install dependencies.
+5. `uv run pytest` / `uv run ruff check .` / `uv run pyright` to verify.
+6. `git add . && git commit -m "chore: rename template" && git push`.
+
+The CI workflow at `.github/workflows/ci.yml` runs automatically on the
+first push.
+
+## What's inside
+
+| Layer | Tool | Purpose |
+|-------|------|---------|
+| Package management | [`uv`](https://github.com/astral-sh/uv) | 10–100× faster than `pip`/`poetry`. Manages Python version, venv, deps, lockfile. |
+| Linting + formatting | [`ruff`](https://github.com/astral-sh/ruff) | Replaces `black`, `isort`, `flake8`, `pyupgrade`. One tool, very fast. |
+| Type checking | [`pyright`](https://github.com/microsoft/pyright) | Strict mode. Faster than `mypy`, better editor integration. |
+| Testing | [`pytest`](https://docs.pytest.org/) + `pytest-cov` | Discovery, fixtures, coverage. |
+| Local enforcement | [`pre-commit`](https://pre-commit.com/) | Runs hooks on every commit before code reaches the repo. |
+| CI | [GitHub Actions](https://docs.github.com/en/actions) | Runs the same checks on every push and PR. |
+| Build backend | [`hatchling`](https://hatch.pypa.io/latest/) | Modern, lightweight, no setuptools cruft. |
+
+For the *why* behind these specific choices, see
+[`docs/adr/0001-toolchain.md`](docs/adr/0001-toolchain.md).
+
+## Project layoutfabrica/
+├── .github/workflows/ci.yml      ← GitHub Actions config
+├── .gitignore
+├── .pre-commit-config.yaml       ← local quality gates
+├── LICENSE                       ← MIT
+├── README.md                     ← this file
+├── pyproject.toml                ← project + tool config
+├── uv.lock                       ← pinned dependency versions
+├── src/
+│   └── fabrica/
+│       ├── init.py           ← package entry point
+│       └── py.typed              ← PEP 561 marker
+└── tests/
+├── init.py
+└── test_smoke.py             ← smoke tests proving infra works## Development
+
+```bash
+# Install everything (creates .venv, installs deps, sets up editable package)
+uv sync
+
+# Run tests
+uv run pytest
+
+# Lint + auto-fix
+uv run ruff check . --fix
+
+# Format
+uv run ruff format .
+
+# Type check
+uv run pyright
+
+# Run all pre-commit hooks against all files (manual trigger)
+uv run pre-commit run --all-files
+```
+
+## Requirements
+
+- Python 3.12+ (managed by `uv` — you don't need to install it separately).
+- `uv` installed: `curl -LsSf https://astral.sh/uv/install.sh | sh`.
+
+That's it. `uv` handles the rest.
+
+## License
+
+MIT — see [`LICENSE`](LICENSE).
+
+## Acknowledgments
+
+Built on the work of [Astral](https://astral.sh/) (`uv`, `ruff`),
+[Microsoft](https://github.com/microsoft/pyright) (`pyright`), the
+[pytest team](https://docs.pytest.org/), and the broader Python community.
+
+---
+
+*Note: to enable the green "Use this template" button on GitHub, go to this
+repo's **Settings → General**, scroll to **Template repository**, and check the box.*
