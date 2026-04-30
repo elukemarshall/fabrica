@@ -75,7 +75,10 @@ first push.
 For the *why* behind these specific choices, see
 [`docs/adr/0001-toolchain.md`](docs/adr/0001-toolchain.md).
 
-## Project layoutfabrica/
+## Project layout
+
+```text
+fabrica/
 ├── .github/workflows/ci.yml      ← GitHub Actions config
 ├── .gitignore
 ├── .pre-commit-config.yaml       ← local quality gates
@@ -85,11 +88,14 @@ For the *why* behind these specific choices, see
 ├── uv.lock                       ← pinned dependency versions
 ├── src/
 │   └── fabrica/
-│       ├── init.py           ← package entry point
+│       ├── __init__.py           ← package entry point
 │       └── py.typed              ← PEP 561 marker
 └── tests/
-├── init.py
-└── test_smoke.py             ← smoke tests proving infra works## Development
+    ├── __init__.py
+    └── test_smoke.py             ← smoke tests proving infra works
+```
+
+## Development
 
 ```bash
 # Install everything (creates .venv, installs deps, sets up editable package)

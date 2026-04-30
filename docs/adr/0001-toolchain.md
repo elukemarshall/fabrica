@@ -17,8 +17,10 @@ Constraints shaping the decision:
   must be enforced, not aspirational.
 - **Audience:** public GitHub. Code is portfolio material; reviewers
   include hiring managers and peers.
-- **Scope:** Python 3.12+. Mostly applied AI / biomedical / space tooling
-  in subsequent projects.
+- **Scope:** Python 3.12+. Biotech-first applied AI / biomedical
+  tooling in subsequent projects, framed across four career lanes
+  (applied AI/ML engineering, solutions engineering, technical sales,
+  independent building).
 - **Recency:** current best-practice as of 2026-04. Choices that age
   poorly cost re-tooling time later.
 - **CI:** GitHub Actions free tier; tooling must run cleanly there.
