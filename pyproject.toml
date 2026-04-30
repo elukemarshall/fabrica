@@ -34,7 +34,7 @@ packages = ["src/fabrica"]
 [tool.ruff]
 line-length = 100
 target-version = "py312"
-src = ["src", "tests"]
+src = ["src", "tests", "evals"]
 
 [tool.ruff.lint]
 select = [
@@ -42,7 +42,7 @@ select = [
 ]
 
 [tool.pyright]
-include = ["src", "tests"]
+include = ["src", "tests", "evals"]
 extraPaths = ["src"]
 typeCheckingMode = "strict"
 pythonVersion = "3.12"
