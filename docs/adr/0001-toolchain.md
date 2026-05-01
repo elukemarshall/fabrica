@@ -6,7 +6,7 @@
 
 ## Context
 
-This repository is the canonical Python project template for the curriculum
+This repository is the canonical Python project template for this public
 portfolio. Every project created from it inherits its toolchain decisions, so
 the choices made here compound across every future repo.
 
