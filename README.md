@@ -29,6 +29,7 @@ The bar is **production-quality from day one**:
 - Tests via `pytest` with coverage tracking.
 - Pre-commit hooks enforcing all of the above locally.
 - GitHub Actions running all of the above on every push and PR.
+- Minimal Dockerfile + `.dockerignore` for reproducible container smoke tests.
 - MIT licensed, public-by-default.
 
 ## Quickstart
@@ -68,6 +69,7 @@ first push.
 | Testing | [`pytest`](https://docs.pytest.org/) + `pytest-cov` | Discovery, fixtures, coverage. |
 | Local enforcement | [`pre-commit`](https://pre-commit.com/) | Runs hooks on every commit before code reaches the repo. |
 | CI | [GitHub Actions](https://docs.github.com/en/actions) | Runs the same checks on every push and PR. |
+| Container smoke test | [Docker](https://docs.docker.com/) | Verifies the project can build and import in a clean container. |
 | Build backend | [`hatchling`](https://hatch.pypa.io/latest/) | Modern, lightweight, no setuptools cruft. |
 
 For the *why* behind these specific choices, see
@@ -78,6 +80,8 @@ For the *why* behind these specific choices, see
 ```text
 python-ai-project-template/
 ├── .github/workflows/ci.yml      ← GitHub Actions config
+├── .dockerignore                 ← container build hygiene
+├── Dockerfile                    ← reproducible container smoke test
 ├── .gitignore
 ├── .pre-commit-config.yaml       ← local quality gates
 ├── LICENSE                       ← MIT
@@ -114,6 +118,17 @@ uv run pyright
 # Run all pre-commit hooks against all files (manual trigger)
 uv run pre-commit run --all-files
 ```
+
+## Container Smoke Test
+
+```bash
+docker build -t fabrica-template .
+docker run --rm fabrica-template
+```
+
+The Dockerfile is intentionally minimal. Template-derived services should extend it with
+`compose.yml`, health checks, environment-specific config, workers, databases, and runbooks
+when the project actually needs production-shaped deployment.
 
 ## Requirements
 
