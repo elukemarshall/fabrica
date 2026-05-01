@@ -1,4 +1,4 @@
-# ADR-0001: Python toolchain for fabrica
+# ADR-0001: Python Toolchain for the AI/ML Project Template
 
 **Status:** Accepted
 **Date:** 2026-04-30
@@ -6,9 +6,9 @@
 
 ## Context
 
-`fabrica` is the canonical Python project template for the curriculum
-portfolio. Every project that descends from it inherits its toolchain
-decisions, so the choices made here compound across every future repo.
+This repository is the canonical Python project template for the curriculum
+portfolio. Every project created from it inherits its toolchain decisions, so
+the choices made here compound across every future repo.
 
 Constraints shaping the decision:
 
@@ -34,7 +34,8 @@ were and why they lost.
 
 ## Decision
 
-Adopt the following toolchain for `fabrica` and every descendant project:
+Adopt the following toolchain for this template and every project created from
+it:
 
 | Concern | Choice |
 |---------|--------|
@@ -144,8 +145,8 @@ infrastructure from the editable-install build step entirely.
 ## Trade-off Analysis
 
 The biggest tradeoff is **cohesion vs ecosystem inertia**: the chosen
-stack is tightly integrated and dramatically faster, but pulls
-`fabrica` away from the still-large `poetry` + `black` + `mypy` mainstream.
+stack is tightly integrated and dramatically faster, but pulls this template
+away from the still-large `poetry` + `black` + `mypy` mainstream.
 Code review by a `poetry`-shop reviewer will require five minutes of
 "oh, you're using `uv` — that's the new thing" explanation. Worth it for
 the speed and cohesion gains.
@@ -189,9 +190,9 @@ but they cost nothing to keep.
 
 ## Action Items
 
-1. [x] Implement toolchain in `fabrica/pyproject.toml`.
+1. [x] Implement toolchain in `pyproject.toml`.
 2. [x] Wire up GitHub Actions CI to enforce all four checks.
 3. [x] Wire up `pre-commit` hooks for local enforcement.
-4. [ ] Use `fabrica` as the template for Project 1 (`pubmed-digest`) to
+4. [ ] Use this repository as the template for Project 1 (`pubmed-digest`) to
        validate the template flow end-to-end.
 5. [ ] Re-evaluate at 2027-Q2.

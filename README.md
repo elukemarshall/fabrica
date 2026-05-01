@@ -1,14 +1,13 @@
-# fabrica
-
-> *Fabrica Curriculorum* — the forge of curricula.
+# Python AI/ML Project Template
 
 [![CI](https://github.com/elukemarshall/fabrica/actions/workflows/ci.yml/badge.svg)](https://github.com/elukemarshall/fabrica/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
-A modern Python project template — a clean, opinionated scaffold for new
-projects with quality gates already wired in. Clone it, rename it, write code.
+A modern Python project template: a clean, opinionated scaffold for applied
+AI/ML projects with quality gates already wired in. Clone it, rename it, write
+code.
 
 ## Why
 
@@ -18,10 +17,10 @@ tests, set up CI, write a license, gitignore a hundred files. Most of that
 work is identical on every project. Doing it from scratch each time wastes
 hours and produces drift between projects.
 
-`fabrica` is the canonical answer for new Python projects in this portfolio.
-Every meaningful new project descends from it. Improvements to the template
-flow forward into future projects; lessons from individual projects flow
-back into the template.
+This repository is the canonical starting point for new Python projects in
+this portfolio. Every meaningful new project starts from it. Improvements to
+the template flow forward into future projects; lessons from individual
+projects flow back into the template.
 
 The bar is **production-quality from day one**:
 
@@ -37,8 +36,7 @@ The bar is **production-quality from day one**:
 ### Via GitHub UI
 
 Click the green **Use this template** button at the top of this repo, name
-your new project, and clone it. (If you don't see that button yet, the
-template flag isn't enabled — see the note at the bottom of this README.)
+your new project, and clone it.
 
 ### Via `gh` CLI
 
@@ -78,7 +76,7 @@ For the *why* behind these specific choices, see
 ## Project layout
 
 ```text
-fabrica/
+python-ai-project-template/
 ├── .github/workflows/ci.yml      ← GitHub Actions config
 ├── .gitignore
 ├── .pre-commit-config.yaml       ← local quality gates
@@ -133,8 +131,3 @@ MIT — see [`LICENSE`](LICENSE).
 Built on the work of [Astral](https://astral.sh/) (`uv`, `ruff`),
 [Microsoft](https://github.com/microsoft/pyright) (`pyright`), the
 [pytest team](https://docs.pytest.org/), and the broader Python community.
-
----
-
-*Note: to enable the green "Use this template" button on GitHub, go to this
-repo's **Settings → General**, scroll to **Template repository**, and check the box.*

@@ -1,1 +1,1 @@
-"""Benchmark / evaluation infrastructure for fabrica-derived projects."""
+"""Benchmark / evaluation infrastructure for template-derived projects."""

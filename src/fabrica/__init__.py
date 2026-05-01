@@ -1,3 +1,3 @@
-"""fabrica — a modern Python project template, the forge for curriculum projects."""
+"""Modern Python project template for production-grade AI/ML projects."""
 
 __version__ = "0.1.0"

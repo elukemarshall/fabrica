@@ -1,7 +1,7 @@
 [project]
 name = "fabrica"
 version = "0.1.0"
-description = "A modern Python project template — the forge for curriculum projects."
+description = "A modern Python project template for production-grade AI/ML projects."
 readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT"

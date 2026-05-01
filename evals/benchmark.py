@@ -1,4 +1,4 @@
-"""Benchmark template for fabrica-derived projects.
+"""Benchmark template for projects created from this template.
 
 Pattern: define a small set of evaluation cases, define one or more model
 backends to test, run each (case, backend) pair, write results to a dated

@@ -1,6 +1,6 @@
 # Benchmarks (`evals/`)
 
-The reusable evaluation pattern for any project that descends from `fabrica`.
+The reusable evaluation pattern for projects created from this template.
 
 ## Why this exists
 
