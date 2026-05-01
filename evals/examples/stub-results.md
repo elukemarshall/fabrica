@@ -1,4 +1,11 @@
-# Benchmark results — 2026-04-30
+# Stub benchmark example
+
+This file shows the markdown shape produced by the template benchmark.
+
+It is intentionally stored under `evals/examples/` instead of
+`evals/results/` because it is documentation, not a real project benchmark.
+Derived projects should commit dated files under `evals/results/` only when the
+cases and scoring rubric represent meaningful task evaluation.
 
 | case | backend | latency (ms) | matched keywords | response (truncated) |
 |------|---------|--------------|------------------|----------------------|

@@ -27,7 +27,9 @@ This `evals/` directory is the reusable infrastructure for answering those quest
 uv run python -m evals.benchmark
 ```
 
-Output goes to `evals/results/results-YYYY-MM-DD.md`. Commit results so trends are reviewable.
+Output goes to `evals/results/results-YYYY-MM-DD.md`. Commit results only
+when the cases and scoring rubric represent meaningful task evaluation. For
+the stub output shape, see `evals/examples/stub-results.md`.
 
 ## Upgrading for real LLM evaluation
 
