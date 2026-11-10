@@ -78,7 +78,7 @@ For the *why* behind these specific choices, see
 ## Project layout
 
 ```text
-python-ai-project-template/
+fabrica/
 ├── .github/workflows/ci.yml      ← GitHub Actions config
 ├── .dockerignore                 ← container build hygiene
 ├── Dockerfile                    ← reproducible container smoke test
